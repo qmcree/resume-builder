@@ -1,0 +1,29 @@
+version: "2"
+
+services:
+  python:
+    build:
+      context: ./python/
+    env_file: ./python/.env
+    ports:
+      - "8080:80"
+    volumes:
+      - "${PROJECT_DIR}:/usr/src/app/"
+    depends_on:
+      - postgres
+
+  nginx:
+    build:
+      context: ./nginx/
+    env_file: ./nginx/.env
+    ports:
+      - "80:80"
+
+  postgres:
+    build:
+      context: ./postgres/
+    env_file: ./postgres/.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./postgres/data:/var/lib/postgresql/data"
