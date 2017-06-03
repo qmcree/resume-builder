@@ -9,6 +9,7 @@ services:
       - "8080:80"
     volumes:
       - "${PROJECT_DIR}:/usr/src/app/"
+    restart: on-failure
     depends_on:
       - postgres
 

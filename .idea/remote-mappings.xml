@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="python@docker-compose://[/Users/qmcree/PycharmProjects/resume-builder/docker/docker-compose.yml]:python/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$/resume_builder" remote-root="/usr/src/app" />
+            </list>
+          </settings>
+        </remote-mappings>
+      </list>
+    </list>
+  </component>
+</project>
