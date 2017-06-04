@@ -28,3 +28,11 @@ services:
       - "5432:5432"
     volumes:
       - "./postgres/data:/var/lib/postgresql/data/"
+
+  node:
+    build:
+      context: ./node/
+    ports:
+      - "3000:3000"
+    volumes:
+      - "${PROJECT_DIR}/ui/resume-builder/:/usr/src/app/"
