@@ -34,7 +34,7 @@ class Quiz extends React.Component {
           <div className="col-sm-12 quiz">
             <br/>
             <h4>Are you looing to get hired for a specific type of job?</h4>
-            <form role="form" id="job-type">
+            <form action="/resume-builder" role="form" id="job-type">
               <FormGroup tag="fieldset">
                 <FormGroup check>
                   <Label check>
@@ -59,9 +59,64 @@ class Quiz extends React.Component {
                 </FormGroup>
                 <FormGroup check >
                   <Label check>
-                    <Input type="radio" name="radio1"/>{' '}
+                    <Input type="radio" name="radio2"/>{' '}
                     I don't have much professional experience, so I am 
                     looking for any job that would take me.
+                  </Label>
+                </FormGroup>
+              </FormGroup>
+              <FormGroup tag="fieldset">
+                <h4>How often have you been without employment for any period of time?</h4>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="radio2" />{' '} 
+                     Never, I have always had jobs. Except for the odd week or two between employers.
+                  </Label>
+                </FormGroup>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="radio2" />{' '} 
+                     I have never really had a steady job.
+                  </Label>
+                </FormGroup>
+                <FormGroup check >
+                  <Label check>
+                    <Input type="radio" name="radio2"/>{' '}
+                     My employment history has several gaps in it.
+                  </Label>
+                </FormGroup>
+                <FormGroup check >
+                  <Label check>
+                    <Input type="radio" name="radio2"/>{' '}
+                     I have gone for periods without having employment, but I have always got
+                    back into my same line of work.
+                  </Label>
+                </FormGroup>
+              </FormGroup>
+              <FormGroup tag="fieldset">
+                <h4>What kind of work history do you have?</h4>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="radio3" />{' '} 
+                     I have been doing the same type of work for most of my life.
+                  </Label>
+                </FormGroup>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="radio3" />{' '} 
+                     I don't have any work experience.
+                  </Label>
+                </FormGroup>
+                <FormGroup check >
+                  <Label check>
+                    <Input type="radio" name="radio3"/>{' '}
+                     I have a steady work history with various employers.
+                  </Label>
+                </FormGroup>
+                <FormGroup check >
+                  <Label check>
+                    <Input type="radio" name="radio3"/>{' '}
+                     I have work experience but have had gaps between jobs.
                   </Label>
                 </FormGroup>
               </FormGroup>
