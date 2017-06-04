@@ -19,8 +19,8 @@ class OccupationCode(models.Model):
 
 class Occupation(models.Model):
     code = models.ForeignKey(OccupationCode)
-    name = models.CharField(max_length=150)
-    is_master = models.BooleanField()
+    name = models.CharField(max_length=200)
+    is_master = models.NullBooleanField()
 
     class Meta:
         unique_together = ('code', 'is_master')  # Each code may only have one master occupation.
@@ -32,7 +32,7 @@ class OccupationDescription(models.Model):
 
 
 class Task(models.Model):
-    occupation = models.ForeignKey(Occupation)
+    occupation_code = models.ForeignKey(OccupationCode)
     task = models.CharField(max_length=1000)
-    onet_id = models.DecimalField(max_digits=8, decimal_places=0)  # No idea why they store this as a decimal field.
+    onet_id = models.DecimalField(max_digits=8, decimal_places=0, unique=True)  # No idea why they store this as a decimal field.
     updated_at = models.DateField()
