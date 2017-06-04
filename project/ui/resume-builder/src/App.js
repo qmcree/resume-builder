@@ -1,3 +1,4 @@
+import './App.css';
 import React, { Component } from 'react';
 import {
     BrowserRouter as Router,
@@ -18,6 +19,8 @@ import {
   Button
 } from 'reactstrap';
 import Home from './Home';
+import ResumeBuilder from './ResumeBuilder';
+import Quiz from './Quiz';
 
 class App extends Component {
   constructor(props) {
@@ -38,16 +41,19 @@ class App extends Component {
       <Router>
         <div>
           {/*Main Nav*/}
-          <Navbar color="inverse" inverse toggleable>
+          <Navbar inverse toggleable>
             <NavbarToggler right onClick={this.toggle} />
-            <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <NavbarBrand href="/">EZ Resume</NavbarBrand>
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
+                  <NavLink href="/">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+                  <NavLink href="/resume-quiz">Quiz</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/resume-builder">Builder</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
@@ -56,6 +62,8 @@ class App extends Component {
         {/* Body */}
         <div>
             <Route exact path="/" component={Home}/>
+            <Route path ="/resume-builder" component={ResumeBuilder}/>
+            <Route path ="/resume-quiz" component={Quiz}/>
         </div>
         </div>
       </Router>
