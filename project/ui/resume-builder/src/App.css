@@ -1,5 +1,6 @@
 p {
   font-family: "Arial";
+  line-height: 1.2;
 }
 
 @font-face {
@@ -104,7 +105,7 @@ p {
 
 /*Quiz Page*/
 .quiz-container {
-  padding: 40px 20%;
+  padding: 40px 15%;
 }
 
 .quiz {
@@ -122,11 +123,16 @@ p {
 
 /* Resume Preview Page */
 
-.resume-main-container {
+.side-resume ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-header {
   margin: auto;
-  text-align: center;
   padding: 30px 60px;
   font-family: ;
+  text-align: center;
 }
 
 /* Final Page */

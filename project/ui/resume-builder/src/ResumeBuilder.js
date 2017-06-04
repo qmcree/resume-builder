@@ -234,25 +234,25 @@ class ResumeBuilder extends React.Component {
 				</div>
 				<div className="col-sm-5">
 					<p>You're best suited for a:</p>
-					<h3>Combination Resume</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-					Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					<h5>Combination Resume</h5>
+					<p>A combination resume is ideal for people who want to emphasize their skills, but also include their work history. 
+					This resume format is a good way of answering the reader’s questions about career changes and gaps in work history. 
 		            </p>
-		            <h3>Objective</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-					Aenean massa.
+		            <h5>Objective</h5>
+					<p>Example: “Seeking a position where my existing janitorial and warehouse skills can be utilized by an 
+					organization that will allow me to excel as a hardworking and reliable employee.”
 					</p>
-					<h3>Roles</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-					Aenean massa.
+					<h5>Roles</h5>
+					<p>Select 3 different types of positions you have had. Feel free to include roles where you haven’t been paid. 
+					Example: If you have taken care of a sick family member and been unable to work, you can include 
+					“Home Health Aide” experience.
 					</p>
-					<h3>Work History</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-					Aenean massa.
+					<h5>Work History</h5>
+					<p>We suggest that you include 4 of your most relevant and recent jobs so that your resume fits on one page. 
+					Feel free to add more if you wish to have more than one page.
 					</p>
-					<h3>Education</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-					Aenean massa.
+					<h5>Education</h5>
+					<p>We suggest that you add any educational achievements that you think will impress a recruiter. 
 					</p>
 				</div>
 			</div>
