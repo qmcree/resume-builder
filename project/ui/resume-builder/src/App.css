@@ -1,8 +1,24 @@
+p {
+  font-family: "Arial";
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.googleapis.com/css?family=Oswald:400'); 
+}
+
 
 /*Resume Builder*/
+.resume-container {
+  padding: 20px 0px;
+  color: #3e3e3e;
+}
+
 .resume-container .row{
   margin: auto;
-  padding: 20px 0px;
+  padding: 5px 0px;
 }
 
 .resume-container input {
@@ -11,10 +27,23 @@
   padding-right: 10px;
 }
 
+.resume-container button {
+  background: #a6ce39;
+  color: white;
+}
+
+.resume-form {
+  border-bottom: 2px solid #a6ce39;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.chosen-skills {
+  padding: 10px 0;
+}
 .control-label {
   display: inline;
 }
-
 
 .task {
   text-align: center;
@@ -45,8 +74,14 @@
   text-align: center;
 }
 
+.home-container button {
+  background: #a6ce39;
+  color: white;
+}
+
 .step-title {
   font-size: 18px;
+  font-weight: 500; 
 }
 
 .button-title {
@@ -64,7 +99,7 @@
   color: #4c4c4c !important;
 }
 .navbar {
-  background-color: #3e5fab !important;
+  background-color: #a6ce39 !important;
 }
 
 /*Quiz Page*/
@@ -73,7 +108,7 @@
 }
 
 .quiz {
-  border: solid 2px #3e5fab;
+  border: solid 2px #a6ce39;
 }
 
 .quiz-container form {
@@ -81,6 +116,30 @@
 }
 
 .quiz-container button {
-  background: #3e5fab;
+  background: #a6ce39;
+  color: white;
+}
+
+/* Resume Preview Page */
+
+.resume-main-container {
+  margin: auto;
+  text-align: center;
+  padding: 30px 60px;
+  font-family: ;
+}
+
+/* Final Page */
+
+.final-main-container {
+  padding: 40px 15%;
+}
+
+.final-main-container .download {
+  text-align: center;
+}
+
+.final-main-container button {
+  background: #a6ce39;
   color: white;
 }

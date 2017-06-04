@@ -13,9 +13,10 @@ import {
   Jumbotron,
   Button
 } from 'reactstrap';
-import questions from './questions.png';
-import typing from './typing.png';
-import resume from './resume.png';
+import stepOne from './step1.png';
+import stepTwo from './step2.png';
+import stepThree from './step3.png';
+import next from './next.png';
 
 class Home extends React.Component {
   constructor(props) {
@@ -38,7 +39,9 @@ class Home extends React.Component {
 	        <Container>
 	          <Row>
 	            <Col>
-	              <h2>Build your Professional Resume!</h2>
+	              <h2>Build your Professional Resume</h2>
+                <p>Our resume builder tool allows you to create a personalized resume that suits your specific
+                needs in 3 simple steps.</p>
 	            </Col>
 	          </Row>
 	        </Container>
@@ -50,18 +53,18 @@ class Home extends React.Component {
             <h4>How it Works</h4>
           </div>
           <div className="col-sm-4">
-            <img className="media-object" src={questions} width="128" alt="questions" />
-            <p className="step-title">1. Answer a few Questions</p>
+            <img className="media-object" src={stepOne} width="128" alt="questions" />
+            <p className="step-title">Answer</p>
           </div>
 
           <div className="col-sm-4">
-            <img className="media-object" src={typing} width="128" alt="typing" />
-            <p className="step-title">2. Enter your Information</p>
+            <img className="media-object" src={stepTwo} width="128" alt="typing" />
+            <p className="step-title">Enter</p>
           </div>
 
           <div className="col-sm-4">
-            <img className="media-object" src={resume} width="128" alt="resume" />
-            <p className="step-title">3. Download your Resume!</p>
+            <img className="media-object" src={stepThree} width="128" alt="resume" />
+            <p className="step-title">Download</p>
           </div>
         </div>
 
@@ -69,7 +72,7 @@ class Home extends React.Component {
           <div className="col-sm-2">
           </div>
           <div className="col-sm-8">
-            <form className="form-horizontal" role="form">
+            <form action="/resume-quiz" className="form-horizontal" role="form">
               <div className="form-group">
                   <div className="col-sm-12">
                       <p className="button-title">First step, tell us your name!</p>
@@ -78,7 +81,7 @@ class Home extends React.Component {
               </div>
               <div className="form-group">
                   <div className="col-sm-12">
-                      <button type="submit" className="btn btn-primary">Get Started!</button>
+                      <button type="submit" className="btn">Get Started!</button>
                   </div>
               </div>
             </form>
