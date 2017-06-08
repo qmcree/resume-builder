@@ -1,7 +1,6 @@
-from django.http import JsonResponse
+from django.http import HttpResponseNotFound, JsonResponse
 
-# Create your views here.
-from resume_builder.models import Skill, Occupation
+from .models import Skill, Occupation, Task
 
 
 def list_skills(request):
@@ -17,5 +16,17 @@ def list_occupations(request):
     else:
         queryset = manager.all()
 
-    occupations = [dict(code=occupation.code_id, name=occupation.name) for occupation in queryset]
+    occupations = [
+        dict(code=occupation.code_id, name=occupation.name)
+        for occupation in queryset[0:100]  # Limit 100 results
+    ]
     return JsonResponse(occupations, safe=False)
+
+
+def list_tasks(request, code):
+    queryset = Task.objects.filter(occupation_code__code__exact=code)
+
+    if queryset:
+        return JsonResponse([task.task for task in queryset], safe=False)
+    else:
+        return HttpResponseNotFound()
