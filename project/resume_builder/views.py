@@ -1,4 +1,5 @@
-from django.http import HttpResponseNotFound, JsonResponse
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseNotAllowed, JsonResponse
+from pdfkit import PDFKit
 
 from .models import Skill, Occupation, Task
 
@@ -30,3 +31,23 @@ def list_tasks(request, code):
         return JsonResponse([task.task for task in queryset], safe=False)
     else:
         return HttpResponseNotFound()
+
+
+def create_resume(request):
+    if request.method != 'POST':
+        return HttpResponseNotAllowed(('POST',))
+    else:
+        body = """
+            <html>
+              <head>
+              </head>
+              <body>
+              Hello this is test HTML for a PDF.
+              </body>
+            </html>
+            """
+        kit = PDFKit(body, 'string')
+        pdf = kit.to_pdf()
+        response = HttpResponse(pdf)
+        response['Content-Type'] = 'application/pdf'
+        return response
