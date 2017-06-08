@@ -13,12 +13,12 @@ services:
     depends_on:
       - postgres
 
-  nginx:
-    build:
-      context: ./nginx/
-    env_file: ./nginx/.env
-    ports:
-      - "80:80"
+  #nginx:
+  #  build:
+  #    context: ./nginx/
+  #  env_file: ./nginx/.env
+  #  ports:
+  #    - "80:80"
 
   postgres:
     build:

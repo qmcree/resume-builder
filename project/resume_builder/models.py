@@ -16,10 +16,13 @@ class ResumeExport(models.Model):
 class OccupationCode(models.Model):
     code = models.CharField(max_length=10, primary_key=True)  # Should be a min-length of 10, too.
 
+    def __str__(self):
+        return self.code
+
 
 class Occupation(models.Model):
     code = models.ForeignKey(OccupationCode)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, db_index=True)
     is_master = models.NullBooleanField()
 
     class Meta:
