@@ -1,10 +1,10 @@
 p {
-  font-family: "Arial";
+  font-family: 'Arial', sans-serif;
   line-height: 1.2;
 }
 
 @font-face {
-  font-family: 'Oswald';
+  font-family: 'Oswald', sans-serif;
   font-style: normal;
   font-weight: 400;
   src: url('https://fonts.googleapis.com/css?family=Oswald:400'); 
@@ -13,13 +13,13 @@ p {
 
 /*Resume Builder*/
 .resume-container {
-  padding: 20px 0px;
+  padding: 20px 0;
   color: #3e3e3e;
 }
 
 .resume-container .row{
   margin: auto;
-  padding: 5px 0px;
+  padding: 5px 0;
 }
 
 .resume-container input {
@@ -57,7 +57,7 @@ p {
 
 .todoListMain .theList {
   list-style: none;
-  padding-left: 0px;
+  padding-left: 0;
   width: 255px;
 }
 
@@ -91,7 +91,7 @@ p {
 }
 
 .jumbotron {
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
   padding-top: 30px !important;
   padding-bottom: 30px !important;
 }
@@ -131,7 +131,7 @@ p {
 .resume-header {
   margin: auto;
   padding: 30px 60px;
-  font-family: ;
+  /* font-family: ; */
   text-align: center;
 }
 
