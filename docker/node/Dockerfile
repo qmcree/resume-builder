@@ -10,6 +10,12 @@ RUN cd /tmp && \
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-CMD cp -R /tmp/node_modules/ . && \
+CMD if [ ! -d "./node_modules/" ]; then \
+        echo 'Copying node_modules...' && \
+        cp -R /tmp/node_modules/ . \
+    fi && \
+    echo 'Copying package.json and yarn.lock...' && \
     cp /tmp/package.json . && \
+    cp /tmp/yarn.lock . && \
+    echo 'Running start script...' && \
     yarn start

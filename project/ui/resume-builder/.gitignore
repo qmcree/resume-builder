@@ -1,9 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# Tracked in Docker directory
-package.json
-yarn.lock
-
 # dependencies
 /node_modules
 
