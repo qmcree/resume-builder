@@ -1,26 +1,19 @@
-import React, {Component} from "react";
+import React from "react";
 import {FormGroup, Input, Label} from "reactstrap";
 
-class Question extends Component {
-    state = {
-        selectedChoiceValue: null
-    };
-
-    handleChange = (event) => {
-        this.setState({selectedChoiceValue: event.target.value});
-    };
-
-    render() {
-        return (
+const Question = function (props) {
+    return (
             <div className="col-sm-12 quiz">
                 <FormGroup tag="fieldset">
-                    <legend>{this.props.text}</legend>
-                    {this.props.choices.map((choice) => {
+                    <legend>{props.text}</legend>
+                    {props.choices.map((choice) => {
                         return (
                             <Label key={choice.type}>
-                                <Input type="radio" value={choice.type}
-                                       checked={this.state.selectedChoiceValue === String(choice.type)}
-                                       onChange={this.handleChange}/>
+                                <Input type="radio"
+                                       name={props.id}
+                                       value={choice.type}
+                                       checked={props.selectedChoiceValue === String(choice.type)}
+                                       onChange={props.handleChange}/>
                                 {choice.text}
                             </Label>
                         );
@@ -28,7 +21,6 @@ class Question extends Component {
                 </FormGroup>
             </div>
         );
-    }
-}
+};
 
 export default Question;

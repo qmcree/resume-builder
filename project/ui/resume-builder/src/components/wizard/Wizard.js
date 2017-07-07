@@ -4,11 +4,32 @@ import {Button, Form, Label} from "reactstrap";
 
 class Wizard extends Component {
     state = {
-        firstName: ''
+        firstName: '',
+        selectedChoices: {}
     };
 
     handleSubmit = (event) => {
         event.preventDefault();
+
+        debugger;
+    };
+
+    handleNameChange = (event) => {
+        this.setState({
+            firstName: event.target.value,
+        })
+    };
+
+    handleChoiceChange = (event) => {
+        // Must set these values because the event is pooled. The event object will be null inside the setState function argument.
+        // See https://facebook.github.io/react/docs/events.html#event-pooling
+        const name = event.target.name;
+        const value = event.target.value;
+
+        this.setState((prevState) => {
+            prevState.selectedChoices[name] = value;
+            return prevState;
+        })
     };
 
     render() {
@@ -17,21 +38,24 @@ class Wizard extends Component {
                 <div className="row">
                     <div className="col-sm-12">
                         <h1>Resume Type</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa.</p>
                     </div>
                 </div>
                 <Form onSubmit={this.handleSubmit}>
                     <div className="row" id="questions">
-                        {this.props.questions.map(function (question) {
-                            return <Question key={question.id} text={question.text} choices={question.choices}/>;
+                        {this.props.questions.map((question) => {
+                            return <Question key={question.id}
+                                             id={question.id}
+                                             text={question.text}
+                                             choices={question.choices}
+                                             selectedChoiceValue={this.state.selectedChoices[question.id]}
+                                             handleChange={this.handleChoiceChange}/>;
                         })}
                     </div>
                     <div className="row">
                         <Label>
                             <input type="text" className="form-control"
                                    placeholder="Enter Full Name"
-                                   onChange={(event) => this.setState({firstName: event.target.value})}
+                                   onChange={this.handleNameChange}
                                    value={this.state.firstName}/>
                         </Label>
                         <Button type="submit" className="btn">Get Started!</Button>
