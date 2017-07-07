@@ -3,22 +3,17 @@ import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} fro
 import {Link} from "react-router-dom";
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
+    state = {
+        isOpen: false
+    };
 
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            isOpen: false
-        };
-    }
-
-    toggle() {
-        this.setState({
+    toggle = () => {
+        this.setState((previousState) => ({
             // If it's closed, open it.
             // If it's open, close it.
-            isOpen: !this.state.isOpen
-        });
-    }
+            isOpen: !previousState.isOpen
+        }));
+    };
 
     render() {
         return (
@@ -34,17 +29,7 @@ class Header extends Component {
                         </NavItem>
                         <NavItem>
                             <NavLink>
-                                <Link to='/wizard'>Wizard</Link>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink>
                                 <Link to="/builder">Builder</Link>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink>
-                                <Link to="/builder/resume">Resume</Link>
                             </NavLink>
                         </NavItem>
                         <NavItem>

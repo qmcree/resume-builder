@@ -3,23 +3,9 @@ import {Col, Container, Jumbotron, Row} from "reactstrap";
 import stepOne from "../../images/step1.png";
 import stepTwo from "../../images/step2.png";
 import stepThree from "../../images/step3.png";
+import Wizard from "../wizard/Wizard";
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            isOpen: false
-        };
-    }
-
-    toggle() {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
-
     render() {
         return (
             <div>
@@ -57,29 +43,8 @@ class Home extends React.Component {
                         </div>
                     </div>
 
-                    <div className="row">
-                        <div className="col-sm-2">
-                        </div>
-                        <div className="col-sm-8">
-                            <form action="/resume-quiz" className="form-horizontal" role="form">
-                                <div className="form-group">
-                                    <div className="col-sm-12">
-                                        <p className="button-title">First step, tell us your name!</p>
-                                        <label><input type="text" className="form-control" id="name" name="name"
-                                                      placeholder="Enter Full Name"/></label>
-                                    </div>
-                                </div>
-                                <div className="form-group">
-                                    <div className="col-sm-12">
-                                        <button type="submit" className="btn">Get Started!</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
+                    <Wizard/>
                 </div>
-
             </div>
         );
     }
