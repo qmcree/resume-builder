@@ -1,18 +1,29 @@
 import React, {Component} from "react";
-import {Route, Switch} from "react-router-dom";
-import Home from "./home/Home";
-import ResumeBuilder from "./builder/ResumeBuilder";
-import Final from "./survey/Final";
+import Wizard from "./wizard/Wizard";
+import * as constants from "./constants";
+import Builder from "./builder/Builder";
 
 class Main extends Component {
+    state = {
+        isWizardVisible: true,
+        typeId: constants.RESUME_TYPE_COMBO,
+        firstName: null,
+    };
+
+    showBuilder = (typeId, firstName) => {
+        this.setState({
+            isWizardVisible: false,
+            typeId: typeId,  // TODO: validate it exists
+            firstName: String(firstName),
+        })
+    };
+
     render() {
         return (
             <div>
-                <Switch>
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/builder" component={ResumeBuilder}/>
-                    <Route exact path="/builder/export" component={Final}/>
-                </Switch>
+                { this.state.isWizardVisible
+                    ? <Wizard showBuilder={this.showBuilder}/>
+                    : <Builder typeId={this.props.typeId} fullName={this.state.firstName}/> }
             </div>
         )
     }
