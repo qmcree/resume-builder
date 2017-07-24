@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 
-class Occupation extends Component {
+class ExperienceList extends Component {
     render() {
         return null;
     }
 }
 
-export default Occupation;
+export default ExperienceList;

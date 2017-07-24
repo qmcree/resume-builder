@@ -5,14 +5,14 @@ import * as constants from "../constants";
 
 class Wizard extends Component {
     state = {
-        firstName: '',
+        fullName: '',
         selectedChoices: {}
     };
 
     handleSubmit = (event) => {
         event.preventDefault();
 
-        this.props.showBuilder(this.calculateType(), this.state.firstName);
+        this.props.showBuilder(this.calculateType(), this.state.fullName);
     };
 
     calculateType() {
@@ -23,7 +23,7 @@ class Wizard extends Component {
 
     handleNameChange = (event) => {
         this.setState({
-            firstName: event.target.value,
+            fullName: event.target.value,
         })
     };
 
@@ -33,7 +33,7 @@ class Wizard extends Component {
         const name = event.target.name;
         const value = event.target.value;
 
-        this.setState((prevState) => {
+        this.setState(function (prevState) {
             prevState.selectedChoices[name] = value;
             return prevState;
         })
@@ -61,9 +61,9 @@ class Wizard extends Component {
                     <div className="row">
                         <Label>
                             <input type="text" className="form-control"
-                                   placeholder="Enter First Name"
+                                   placeholder="Enter Full Name"
                                    onChange={this.handleNameChange}
-                                   value={this.state.firstName}/>
+                                   value={this.state.fullName}/>
                         </Label>
                         <Button type="submit" className="btn">Get Started!</Button>
                     </div>
